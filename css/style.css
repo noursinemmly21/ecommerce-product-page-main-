@@ -1,0 +1,401 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+:root{
+    --Orange: hsl(26, 100%, 55%);
+    --Pale-orange: hsl(25, 100%, 94%);
+    --Very-dark-blue: hsl(220, 13%, 13%);
+    --Dark-grayish-blue: hsl(219, 9%, 45%);
+    --Grayish-blue: hsl(220, 14%, 75%);
+    --Light-grayish-blue: hsl(223, 64%, 98%);
+    --White: hsl(0, 0%, 100%);
+    --Black: hsl(0, 0%, 0%);
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+}
+ul li a{
+    text-decoration: none;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+}
+@media(min-width:992px){
+    nav{
+        border-bottom: 1px solid var(--Grayish-blue);
+    }
+}
+nav .navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav .navbar ul{
+    display: flex;
+    align-items: center;
+    padding-left: 48px;
+}
+nav .navbar ul li{
+    padding-right: 15px;
+}
+nav .navbar ul li a{
+    color: var(--Dark-grayish-blue);
+    position: relative;
+}
+nav .navbar ul li a:hover{
+    color: var(--Black);
+    font-weight: 500;
+}
+nav .navbar ul li a::after{
+    content: "";
+    position: absolute;
+    background: var(--Orange);
+    width: 100%;
+    height: 3px;
+    left: 0;
+    bottom: -34px;
+    transform: scale(0);
+    transform-origin: left;
+    transition: all ease 0.5s;
+}
+nav .navbar ul li a:hover::after{
+    transform: scale(1);
+}
+nav .list{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    justify-content: space-between;
+
+}
+nav .list li:nth-child(1){
+    margin-right: 22px;
+}
+nav .list li:nth-of-type(2) img{
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--Orange);
+    border-radius: 50%;
+}
+@media(min-width:100px) and (max-width:991px){
+
+    nav .navbar{
+        flex-direction: row-reverse;
+    }
+    nav .navbar .logo{
+        padding-left: 16px;
+    }
+    nav .navbar .menu_bar svg{
+        vertical-align: middle;
+    }
+    nav .navbar .menu.d-visible{
+    position: fixed;
+    background: #0000002e;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    bottom: 0;
+    visibility: visible;
+    transition: all 0.5s ease ;
+    }
+    nav .navbar .menu.d-hidden{
+        visibility: hidden;
+        position: absolute;
+    }
+    nav .navbar .liste .close{
+    display: flex;
+    justify-content: end;
+    padding: 20px 20px 10px;
+    color: var(--Orange);
+    }
+    nav .navbar .menu.d-hidden .liste{
+        transform: translateX(-493px);
+    }
+    nav .navbar .menu.d-visible .liste{
+        transform: translateX(0px);
+        background: var(--White);
+        height: 100%;
+        width: 50%;
+        transition: all 0.5s ease;
+    }
+    nav .navbar .liste ul{
+    flex-direction: column;
+    position: absolute;
+    }
+    nav .navbar .liste ul li{
+            padding-bottom: 16px;
+    }
+    nav .navbar ul li a::after{
+        bottom: -10px;
+    }
+    nav .list:nth-child(1){
+        padding-right: 22px;
+    }
+}
+@media(max-width:599px){
+    nav .navbar .menu.d-visible .liste{
+        width: 95%;
+    }
+}
+nav .list li button{
+    border: none;
+    background-color: transparent;
+    position: relative;
+}
+nav .list li button .num.vis_visibile{
+    position: absolute;
+    background: var(--Orange);
+    width: 15px;
+    height: 15px;
+    left: 6px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    font-size: 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    visibility: visible;
+    padding: 0 10px;
+}
+nav .list li button .num.vis_hidden{
+    visibility: hidden;
+}
+nav .list li .cart{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    display: flex;
+    justify-content: end;
+    height: 15rem;
+    top: 112px;
+
+   
+}
+nav .list li .cart{
+visibility: visible;
+transition: all 0.5s ease;
+top: 71px;
+}
+nav .list li .cart.visible_hidden{
+    visibility: hidden;
+}
+nav .list li .cart .car{
+    padding: 17px;
+    background: white;
+    box-shadow: 0 0 10px var(--Dark-grayish-blue);
+    border-radius: 5px;
+    width: 35%;
+  
+}
+nav .list li .cart .car .h6{
+    border-bottom: 1px solid var(--Grayish-blue);
+    padding-bottom: 10px;
+}
+nav .list li .cart .car .empty{
+    height: calc(100% - 28px);
+    text-align: center;
+    padding-top: 31%;
+    color: var(--Dark-grayish-blue);
+    font-weight: 600;
+}
+nav .list li .cart .car .empty.dis_block{
+    display: block;
+}
+nav .list li .cart .car .empty.dis_none{
+    display: none;
+}
+nav .list li .cart .car .inempty.dis_non{
+    display: none;
+}
+nav .list li .cart .car .inempty.dis_blocke{
+    display: block;
+    height: 100%;
+}
+nav .list li .cart .car .inempty .text{
+    display: flex;
+    justify-content: space-between;
+    height: calc(100% - 127px);
+    margin-top: 15px;
+}
+nav .list li .cart .car .inempty .text img{
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+nav .list li .cart .car  .inempty .text p{
+    margin: 0;
+    font-size: 13px;
+    color: var(--Dark-grayish-blue);
+    font-weight: 600;
+    padding-left:5px ;
+}
+nav .list li .cart .car .inempty .text .calc{
+    font-size: 15px;
+    color: var(--Dark-grayish-blue);
+}
+nav .list li .cart .car .inempty .text  .result{
+    margin-left: 5px;
+    font-weight: 600;
+    font-size: 17px;
+}
+nav .list li .cart .car .inempty .fa-trash{
+    color: var(--Grayish-blue);
+}
+nav .list li .cart .car .inempty button{
+    width: 100%;
+    border: none;
+    background: var(--Orange);
+    color: var(--Light-grayish-blue);
+    padding: 10px;
+    border-radius: 10px;
+}
+@media(min-width:567px) and (max-width:991px){
+    nav .list li .cart .car{
+        width: 50%;
+    }
+}
+@media(min-width:100px) and (max-width:566px){
+    nav .list li .cart .car{
+        width: 90%;
+    }
+}
+.header .images {
+    display: flex;
+    flex-direction: column;
+}
+.header .images .image{
+    height: 320px;
+}
+.header .images .image img{
+    width: 100%;
+    height: 320px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.header .images  .img{
+    display: flex;
+    justify-content: space-between;
+}
+.header .images  .img img{
+    width: 90px;
+    height: 90px;
+    border-radius: 5px;
+}
+.header .images  .img img:hover{
+ border: 2px solid var(--Orange);
+ opacity: 50%;
+}
+.header .text{
+    padding-top: 32px;
+    padding-left: 20px;
+}
+.header .text h6:nth-of-type(1){
+    color: var(--Orange);
+    font-size: 15px;
+    font-weight: 600;
+}
+.header .text h3{
+    font-weight: 600;
+}
+.header .text p{
+    color: var(--Dark-grayish-blue);
+    font-size: 16px;
+}
+.header .text h6:nth-of-type(2){
+    font-weight: 800;
+    font-size: 25px;
+    color: var(--Black);
+    margin: 0;
+}
+.header .text h6 span{
+    color: var(--Orange);
+    font-size: 16px;
+    margin-left: 10px;
+    background: var(--Pale-orange);
+    padding: 5px;
+    border-radius: 10px;
+}
+.header .text > span{
+    color: var(--Grayish-blue);
+    text-decoration: line-through;
+    font-size: 15px;
+    font-weight: 600;
+}
+.header .text .add{
+display: flex;
+margin-top: 27px;
+}
+.header .text .add .math{
+    background: var(--Light-grayish-blue);
+    padding: 10px;
+    border-radius: 10px;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.header .text .add .math svg{
+    color: var(--Orange);
+    cursor: pointer;
+}
+
+.header .text .add button{
+    margin-left: 10px;
+    width: 50%;
+    border: none;
+    background: var(--Orange);
+    border-radius: 10px;
+    color: var(--White);
+    font-size: 16px;
+    font-weight: 600;
+}
+.header .text .add button svg{
+    margin-right: 5px;
+}       
+
+@media(max-width:430px){
+    .header .images .img img{
+        width: 50px;
+        height: 50px;
+    }
+}
+@media(max-width:335px){
+    .header .text .add{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .header .text .add .math,.header .text .add button{
+        width: 100%;
+    }
+    .header .text .add button{
+        margin-left: 0;
+        margin-top: 10px;
+        height: 50px;
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* 032201513 */

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;500;600;700;800&family=Epilogue:ital,wght@0,500;0,700;1,500;1,700&family=Inter:wght@400;700;800&family=Josefin+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Kumbh+Sans:wght@200;300;400;500;600;700;800;900&family=Manrope:wght@400;500;700&family=Overpass:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Roboto+Mono:wght@300&family=Rubik:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Space+Grotesk:wght@500&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | E-commerce product page</title>
+</head>
+<body>
+    <div class="container pt-3">
+      <nav class="pb-3">
+        <div class="navbar">
+          <div class="logo">
+            <img src="images/logo.svg" alt="">
+          </div>
+          <div class="menu_bar " >
+            <i class="fa-solid fa-bars d-lg-none"></i>
+          </div>
+          <div class="menu d-hidden">
+            <div class="liste">
+                <div class="close d-lg-none ">
+                  <i class="fa-regular fa-circle-xmark"></i>
+                </div>
+                <ul>
+                  <li><a href="">Collections</a></li>
+                  <li><a href="">Men</a></li>
+                  <li><a href="">Women</a></li>
+                  <li><a href="">About</a></li>
+                  <li><a href="">Contact</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+        <ul class="list">
+          <li>
+            <button><i class="fa-solid fa-cart-shopping"></i>
+            <span class="num vis_hidden"></span>
+            </button>
+            <div class="cart visible_hidden">
+              <div class="car ">
+                <div class="h6 m-0">
+                  <h6>Cart</h6>
+                </div>
+                <div class="empty dis_block">You cart is empty</div>
+                <div class="inempty dis_non">
+                  <div class="text ">
+                    <img src="images/image-product-1.jpg" alt="">
+                    <div class="fall">
+                      <p>Fall Limited Edition Sneakers</p>
+                      <span class="calc"></span>
+                      <span class="result"></span>
+                    </div>
+                    <i class="fa-solid fa-trash" onclick="delet()"></i>
+                  </div>
+                  <button >Checkout</button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <img src="images/image-avatar.png" alt="">
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="container mt-5">
+      <div class="header mb-5">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="images">
+              <div class="image">
+                <img  src="images/image-product-1.jpg" alt="">
+              </div>
+              <div class="img mt-2">
+                <img class="active" src="images/image-product-1.jpg" data-img="img1" alt="">
+                <img src="images/image-product-2.jpg" data-img="img2" alt="">
+                <img src="images/image-product-3.jpg" data-img="img3" alt="">
+                <img src="images/image-product-4.jpg" data-img="img4" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="text">
+              <h6>Sneaker Company</h6>
+              <h3>Fall Limited Edition Sneakers</h3>
+              <p>  These low-profile sneakers are your perfect casual wear companion. Featuring a 
+                durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+              <h6>$125.00 <span>50%</span></h6>
+              <span>$250.00</span>
+                <div class="add">
+                  <div class="math">
+                    <i class="fa-solid fa-minus" onclick="decrement()"></i>
+                    <span class="number">0</span>
+                    <i class="fa-solid fa-plus" onclick="increment()"></i>
+                  </div>
+                  <button onclick="btn_add()"><i class="fa-solid fa-cart-shopping"></i> Add to cart</button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="js/all.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
+
